@@ -4,7 +4,7 @@ use ieee.std_logic_misc.all;
 use ieee.numeric_std.all;
 
 entity uart is
-	generic(
+	generic (
 		MULTI_SAMPLE_WIDTH   : integer := 4;                     -- Baud rate config port width.
 		BAUD_WIDTH           : integer := 2**MULTI_SAMPLE_WIDTH; -- Multi-sample config port width.
 		
@@ -180,6 +180,17 @@ begin
 	-- Configuration setting.
 	
 	process (
+		tx_busy     ,
+		rx_busy     ,
+		use_cts_rts ,
+		clk_per_baud,
+		byte_size   ,
+		parity      ,
+		stop_bits   ,
+		multi_sample,
+		data_parity ,
+		tx_parity   ,
+		config_set  ,
 		use_cts_rts_reg ,
 		clk_per_baud_reg,
 		byte_size_reg   ,
@@ -257,7 +268,8 @@ begin
 		rx_stop_buffer  ,
 		rx_bit_cnt      ,
 		ss_rx     ,
-		ss_rx_data
+		ss_rx_data,
+		data_parity
 	) begin
 		rx_busy               <= '1';
 		rx_next               <= '0';
@@ -441,7 +453,8 @@ begin
 		tx_state     ,
 		tx_buffer    ,
 		tx_bit_cnt   ,
-		tx_bit_cntdwn
+		tx_bit_cntdwn,
+		tx_parity
 	) begin
 		rts     <= '0';
 		tx_busy <= '1';

@@ -8,7 +8,7 @@ module uart_tb();
 	localparam DEFAULT_BYTE_SIZE    = 8;
 	localparam DEFAULT_PARITY       = 0;
 	localparam DEFAULT_STOP_BITS    = 1;
-	localparam DEFAULT_MULTI_SAMPLE = 1; 
+	localparam DEFAULT_MULTI_SAMPLE = 2; 
 	
 	reg [8:0] test_data;
 	reg       test_send;
