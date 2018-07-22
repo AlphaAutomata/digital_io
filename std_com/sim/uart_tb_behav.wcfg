@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="uart_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="uart_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="200000000001fs"></ZoomEndTime>
+      <Cursor1Time time="200000000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="263"></NameColumnWidth>
+      <ValueColumnWidth column_width="71"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="1" />
+   <wvobject fp_name="group1247" type="group">
+      <obj_property name="label">top_tb</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/uart_tb/test_data" type="array">
+         <obj_property name="ElementShortName">test_data[8:0]</obj_property>
+         <obj_property name="ObjectShortName">test_data[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/uart_tb/test_send" type="logic">
+         <obj_property name="ElementShortName">test_send</obj_property>
+         <obj_property name="ObjectShortName">test_send</obj_property>
+      </wvobject>
+      <wvobject fp_name="/uart_tb/rcv_data" type="array">
+         <obj_property name="ElementShortName">rcv_data[8:0]</obj_property>
+         <obj_property name="ObjectShortName">rcv_data[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/uart_tb/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/uart_tb/rst_n" type="logic">
+         <obj_property name="ElementShortName">rst_n</obj_property>
+         <obj_property name="ObjectShortName">rst_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="group1248" type="group">
+         <obj_property name="label">trx</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="group1324" type="group">
+            <obj_property name="label">ports</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/uart_tb/trx/rxd" type="logic">
+               <obj_property name="ElementShortName">rxd</obj_property>
+               <obj_property name="ObjectShortName">rxd</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/txd" type="logic">
+               <obj_property name="ElementShortName">txd</obj_property>
+               <obj_property name="ObjectShortName">txd</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/rx_data" type="array">
+               <obj_property name="ElementShortName">rx_data[8:0]</obj_property>
+               <obj_property name="ObjectShortName">rx_data[8:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/rx" type="logic">
+               <obj_property name="ElementShortName">rx</obj_property>
+               <obj_property name="ObjectShortName">rx</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/tx_data" type="array">
+               <obj_property name="ElementShortName">tx_data[8:0]</obj_property>
+               <obj_property name="ObjectShortName">tx_data[8:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/tx" type="logic">
+               <obj_property name="ElementShortName">tx</obj_property>
+               <obj_property name="ObjectShortName">tx</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/rts" type="logic">
+               <obj_property name="ElementShortName">rts</obj_property>
+               <obj_property name="ObjectShortName">rts</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/cts" type="logic">
+               <obj_property name="ElementShortName">cts</obj_property>
+               <obj_property name="ObjectShortName">cts</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/tx_busy" type="logic">
+               <obj_property name="ElementShortName">tx_busy</obj_property>
+               <obj_property name="ObjectShortName">tx_busy</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/rx_busy" type="logic">
+               <obj_property name="ElementShortName">rx_busy</obj_property>
+               <obj_property name="ObjectShortName">rx_busy</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/err_break" type="logic">
+               <obj_property name="ElementShortName">err_break</obj_property>
+               <obj_property name="ObjectShortName">err_break</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/err_parity" type="logic">
+               <obj_property name="ElementShortName">err_parity</obj_property>
+               <obj_property name="ObjectShortName">err_parity</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/err_frame" type="logic">
+               <obj_property name="ElementShortName">err_frame</obj_property>
+               <obj_property name="ObjectShortName">err_frame</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/config_set" type="logic">
+               <obj_property name="ElementShortName">config_set</obj_property>
+               <obj_property name="ObjectShortName">config_set</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/config_ack" type="logic">
+               <obj_property name="ElementShortName">config_ack</obj_property>
+               <obj_property name="ObjectShortName">config_ack</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/use_cts_rts" type="logic">
+               <obj_property name="ElementShortName">use_cts_rts</obj_property>
+               <obj_property name="ObjectShortName">use_cts_rts</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/clk_per_baud" type="array">
+               <obj_property name="ElementShortName">clk_per_baud[15:0]</obj_property>
+               <obj_property name="ObjectShortName">clk_per_baud[15:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/byte_size" type="array">
+               <obj_property name="ElementShortName">byte_size[3:0]</obj_property>
+               <obj_property name="ObjectShortName">byte_size[3:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/parity" type="logic">
+               <obj_property name="ElementShortName">parity</obj_property>
+               <obj_property name="ObjectShortName">parity</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/stop_bits" type="array">
+               <obj_property name="ElementShortName">stop_bits[1:0]</obj_property>
+               <obj_property name="ObjectShortName">stop_bits[1:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/multi_sample" type="array">
+               <obj_property name="ElementShortName">multi_sample[3:0]</obj_property>
+               <obj_property name="ObjectShortName">multi_sample[3:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/clk" type="logic">
+               <obj_property name="ElementShortName">clk</obj_property>
+               <obj_property name="ObjectShortName">clk</obj_property>
+            </wvobject>
+            <wvobject fp_name="/uart_tb/trx/rst_n" type="logic">
+               <obj_property name="ElementShortName">rst_n</obj_property>
+               <obj_property name="ObjectShortName">rst_n</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject fp_name="group1325" type="group">
+            <obj_property name="label">internal</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="isExpanded"></obj_property>
+            <wvobject fp_name="group1326" type="group">
+               <obj_property name="label">io_regs</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject fp_name="/uart_tb/trx/rx_next" type="logic">
+                  <obj_property name="ElementShortName">rx_next</obj_property>
+                  <obj_property name="ObjectShortName">rx_next</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/err_break_next" type="logic">
+                  <obj_property name="ElementShortName">err_break_next</obj_property>
+                  <obj_property name="ObjectShortName">err_break_next</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/err_parity_next" type="logic">
+                  <obj_property name="ElementShortName">err_parity_next</obj_property>
+                  <obj_property name="ObjectShortName">err_parity_next</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/err_frame_next" type="logic">
+                  <obj_property name="ElementShortName">err_frame_next</obj_property>
+                  <obj_property name="ObjectShortName">err_frame_next</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/config_ack_next" type="logic">
+                  <obj_property name="ElementShortName">config_ack_next</obj_property>
+                  <obj_property name="ObjectShortName">config_ack_next</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/use_cts_rts_reg" type="logic">
+                  <obj_property name="ElementShortName">use_cts_rts_reg</obj_property>
+                  <obj_property name="ObjectShortName">use_cts_rts_reg</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/clk_per_baud_reg" type="array">
+                  <obj_property name="ElementShortName">clk_per_baud_reg[15:0]</obj_property>
+                  <obj_property name="ObjectShortName">clk_per_baud_reg[15:0]</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/byte_size_reg" type="array">
+                  <obj_property name="ElementShortName">byte_size_reg[3:0]</obj_property>
+                  <obj_property name="ObjectShortName">byte_size_reg[3:0]</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/parity_reg" type="array">
+                  <obj_property name="ElementShortName">parity_reg[0:0]</obj_property>
+                  <obj_property name="ObjectShortName">parity_reg[0:0]</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/stop_bits_reg" type="array">
+                  <obj_property name="ElementShortName">stop_bits_reg[1:0]</obj_property>
+                  <obj_property name="ObjectShortName">stop_bits_reg[1:0]</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/multi_sample_reg" type="array">
+                  <obj_property name="ElementShortName">multi_sample_reg[3:0]</obj_property>
+                  <obj_property name="ObjectShortName">multi_sample_reg[3:0]</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/use_cts_rts_reg_next" type="logic">
+                  <obj_property name="ElementShortName">use_cts_rts_reg_next</obj_property>
+                  <obj_property name="ObjectShortName">use_cts_rts_reg_next</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/clk_per_baud_reg_next" type="array">
+                  <obj_property name="ElementShortName">clk_per_baud_reg_next[15:0]</obj_property>
+                  <obj_property name="ObjectShortName">clk_per_baud_reg_next[15:0]</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/byte_size_reg_next" type="array">
+                  <obj_property name="ElementShortName">byte_size_reg_next[3:0]</obj_property>
+                  <obj_property name="ObjectShortName">byte_size_reg_next[3:0]</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/parity_reg_next" type="array">
+                  <obj_property name="ElementShortName">parity_reg_next[0:0]</obj_property>
+                  <obj_property name="ObjectShortName">parity_reg_next[0:0]</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/stop_bits_reg_next" type="array">
+                  <obj_property name="ElementShortName">stop_bits_reg_next[1:0]</obj_property>
+                  <obj_property name="ObjectShortName">stop_bits_reg_next[1:0]</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/multi_sample_reg_next" type="array">
+                  <obj_property name="ElementShortName">multi_sample_reg_next[3:0]</obj_property>
+                  <obj_property name="ObjectShortName">multi_sample_reg_next[3:0]</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject fp_name="group1327" type="group">
+               <obj_property name="label">rx</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="isExpanded"></obj_property>
+               <wvobject fp_name="/uart_tb/trx/rx_state" type="other">
+                  <obj_property name="ElementShortName">rx_state</obj_property>
+                  <obj_property name="ObjectShortName">rx_state</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/rx_state_next" type="other">
+                  <obj_property name="ElementShortName">rx_state_next</obj_property>
+                  <obj_property name="ObjectShortName">rx_state_next</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/rx_start_buffer" type="logic">
+                  <obj_property name="ElementShortName">rx_start_buffer</obj_property>
+                  <obj_property name="ObjectShortName">rx_start_buffer</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/rx_start_buffer_next" type="logic">
+                  <obj_property name="ElementShortName">rx_start_buffer_next</obj_property>
+                  <obj_property name="ObjectShortName">rx_start_buffer_next</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/rx_buffer" type="array">
+                  <obj_property name="ElementShortName">rx_buffer[8:0]</obj_property>
+                  <obj_property name="ObjectShortName">rx_buffer[8:0]</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/rx_buffer_next" type="array">
+                  <obj_property name="ElementShortName">rx_buffer_next[8:0]</obj_property>
+                  <obj_property name="ObjectShortName">rx_buffer_next[8:0]</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/rx_parity_buffer" type="logic">
+                  <obj_property name="ElementShortName">rx_parity_buffer</obj_property>
+                  <obj_property name="ObjectShortName">rx_parity_buffer</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/rx_parity_buffer_next" type="logic">
+                  <obj_property name="ElementShortName">rx_parity_buffer_next</obj_property>
+                  <obj_property name="ObjectShortName">rx_parity_buffer_next</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/rx_stop_buffer" type="array">
+                  <obj_property name="ElementShortName">rx_stop_buffer[1:0]</obj_property>
+                  <obj_property name="ObjectShortName">rx_stop_buffer[1:0]</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/rx_stop_buffer_next" type="array">
+                  <obj_property name="ElementShortName">rx_stop_buffer_next[1:0]</obj_property>
+                  <obj_property name="ObjectShortName">rx_stop_buffer_next[1:0]</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/data_parity" type="logic">
+                  <obj_property name="ElementShortName">data_parity</obj_property>
+                  <obj_property name="ObjectShortName">data_parity</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/rx_bit_cnt" type="array">
+                  <obj_property name="ElementShortName">rx_bit_cnt[3:0]</obj_property>
+                  <obj_property name="ObjectShortName">rx_bit_cnt[3:0]</obj_property>
+                  <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/rx_bit_cnt_next" type="array">
+                  <obj_property name="ElementShortName">rx_bit_cnt_next[3:0]</obj_property>
+                  <obj_property name="ObjectShortName">rx_bit_cnt_next[3:0]</obj_property>
+                  <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/ss_rxd" type="logic">
+                  <obj_property name="ElementShortName">ss_rxd</obj_property>
+                  <obj_property name="ObjectShortName">ss_rxd</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/ss_rx_enable_n" type="logic">
+                  <obj_property name="ElementShortName">ss_rx_enable_n</obj_property>
+                  <obj_property name="ObjectShortName">ss_rx_enable_n</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/ss_rx_data" type="logic">
+                  <obj_property name="ElementShortName">ss_rx_data</obj_property>
+                  <obj_property name="ObjectShortName">ss_rx_data</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/ss_rx" type="logic">
+                  <obj_property name="ElementShortName">ss_rx</obj_property>
+                  <obj_property name="ObjectShortName">ss_rx</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/ss_clk_per_baud" type="array">
+                  <obj_property name="ElementShortName">ss_clk_per_baud[15:0]</obj_property>
+                  <obj_property name="ObjectShortName">ss_clk_per_baud[15:0]</obj_property>
+                  <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/ss_multi_sample" type="array">
+                  <obj_property name="ElementShortName">ss_multi_sample[3:0]</obj_property>
+                  <obj_property name="ObjectShortName">ss_multi_sample[3:0]</obj_property>
+                  <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject fp_name="group1328" type="group">
+               <obj_property name="label">tx</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject fp_name="/uart_tb/trx/tx_state" type="other">
+                  <obj_property name="ElementShortName">tx_state</obj_property>
+                  <obj_property name="ObjectShortName">tx_state</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/tx_state_next" type="other">
+                  <obj_property name="ElementShortName">tx_state_next</obj_property>
+                  <obj_property name="ObjectShortName">tx_state_next</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/tx_parity" type="logic">
+                  <obj_property name="ElementShortName">tx_parity</obj_property>
+                  <obj_property name="ObjectShortName">tx_parity</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/tx_buffer" type="array">
+                  <obj_property name="ElementShortName">tx_buffer[8:0]</obj_property>
+                  <obj_property name="ObjectShortName">tx_buffer[8:0]</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/tx_bit_cnt" type="array">
+                  <obj_property name="ElementShortName">tx_bit_cnt[3:0]</obj_property>
+                  <obj_property name="ObjectShortName">tx_bit_cnt[3:0]</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/tx_bit_cntdwn" type="array">
+                  <obj_property name="ElementShortName">tx_bit_cntdwn[15:0]</obj_property>
+                  <obj_property name="ObjectShortName">tx_bit_cntdwn[15:0]</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/tx_buffer_next" type="array">
+                  <obj_property name="ElementShortName">tx_buffer_next[8:0]</obj_property>
+                  <obj_property name="ObjectShortName">tx_buffer_next[8:0]</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/tx_bit_cnt_next" type="array">
+                  <obj_property name="ElementShortName">tx_bit_cnt_next[3:0]</obj_property>
+                  <obj_property name="ObjectShortName">tx_bit_cnt_next[3:0]</obj_property>
+               </wvobject>
+               <wvobject fp_name="/uart_tb/trx/tx_bit_cntdwn_next" type="array">
+                  <obj_property name="ElementShortName">tx_bit_cntdwn_next[15:0]</obj_property>
+                  <obj_property name="ObjectShortName">tx_bit_cntdwn_next[15:0]</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject fp_name="/uart_tb/trx/MULTI_SAMPLE_WIDTH" type="other">
+            <obj_property name="ElementShortName">MULTI_SAMPLE_WIDTH</obj_property>
+            <obj_property name="ObjectShortName">MULTI_SAMPLE_WIDTH</obj_property>
+         </wvobject>
+         <wvobject fp_name="/uart_tb/trx/BAUD_WIDTH" type="other">
+            <obj_property name="ElementShortName">BAUD_WIDTH</obj_property>
+            <obj_property name="ObjectShortName">BAUD_WIDTH</obj_property>
+         </wvobject>
+         <wvobject fp_name="/uart_tb/trx/DEFAULT_BAUD" type="other">
+            <obj_property name="ElementShortName">DEFAULT_BAUD</obj_property>
+            <obj_property name="ObjectShortName">DEFAULT_BAUD</obj_property>
+         </wvobject>
+         <wvobject fp_name="/uart_tb/trx/DEFAULT_BYTE_SIZE" type="other">
+            <obj_property name="ElementShortName">DEFAULT_BYTE_SIZE</obj_property>
+            <obj_property name="ObjectShortName">DEFAULT_BYTE_SIZE</obj_property>
+         </wvobject>
+         <wvobject fp_name="/uart_tb/trx/DEFAULT_PARITY" type="other">
+            <obj_property name="ElementShortName">DEFAULT_PARITY</obj_property>
+            <obj_property name="ObjectShortName">DEFAULT_PARITY</obj_property>
+         </wvobject>
+         <wvobject fp_name="/uart_tb/trx/DEFAULT_STOP_BITS" type="other">
+            <obj_property name="ElementShortName">DEFAULT_STOP_BITS</obj_property>
+            <obj_property name="ObjectShortName">DEFAULT_STOP_BITS</obj_property>
+         </wvobject>
+         <wvobject fp_name="/uart_tb/trx/DEFAULT_MULTI_SAMPLE" type="other">
+            <obj_property name="ElementShortName">DEFAULT_MULTI_SAMPLE</obj_property>
+            <obj_property name="ObjectShortName">DEFAULT_MULTI_SAMPLE</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/uart_tb/MULTI_SAMPLE_WIDTH" type="array">
+         <obj_property name="ElementShortName">MULTI_SAMPLE_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">MULTI_SAMPLE_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/uart_tb/BAUD_WIDTH" type="array">
+         <obj_property name="ElementShortName">BAUD_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">BAUD_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/uart_tb/DEFAULT_BAUD" type="array">
+         <obj_property name="ElementShortName">DEFAULT_BAUD[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DEFAULT_BAUD[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/uart_tb/DEFAULT_BYTE_SIZE" type="array">
+         <obj_property name="ElementShortName">DEFAULT_BYTE_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DEFAULT_BYTE_SIZE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/uart_tb/DEFAULT_PARITY" type="array">
+         <obj_property name="ElementShortName">DEFAULT_PARITY[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DEFAULT_PARITY[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/uart_tb/DEFAULT_STOP_BITS" type="array">
+         <obj_property name="ElementShortName">DEFAULT_STOP_BITS[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DEFAULT_STOP_BITS[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/uart_tb/DEFAULT_MULTI_SAMPLE" type="array">
+         <obj_property name="ElementShortName">DEFAULT_MULTI_SAMPLE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DEFAULT_MULTI_SAMPLE[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

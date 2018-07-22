@@ -4,9 +4,9 @@ use ieee.numeric_std.all;
 use ieee.math_real.all;
 
 entity multi_sample_buffer is
-	generic(
-		MULTI_SAMPLE_WIDTH : integer := 4;
-		BAUD_WIDTH         : integer := 2**MULTI_SAMPLE_WIDTH
+	generic (
+		MULTI_SAMPLE_WIDTH : integer := 4;                    -- Width of baud rate config port.
+		BAUD_WIDTH         : integer := 2**MULTI_SAMPLE_WIDTH -- Width of multi-sample config port.
 	);
 	port (
 		-- Physical layer interface.
