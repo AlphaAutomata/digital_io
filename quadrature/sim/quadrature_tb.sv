@@ -26,46 +26,54 @@ module quadrature_tb();
 		
 	wire hw_err;
 		
-	wire [COUNTER_WIDTH-1:0] displacement      ;
-	wire                     clear_displacement;
+	wire [COUNTER_WIDTH-1:0] displacement          ;
+	wire                     displacement_updated  ;
+	wire                     clear_displacement    ;
 	
-	wire [COUNTER_WIDTH-1:0] phase_offset      ;
-	wire                     phase_offset_valid;
+	wire [COUNTER_WIDTH-1:0] phase_offset          ;
+	wire                     phase_offset_valid    ;
+		
+	wire [COUNTER_WIDTH-1:0] antiphase_offset      ;
+	wire                     antiphase_offset_valid;
 	
-	wire [COUNTER_WIDTH-1:0] a_pulse_width     ;
-	wire                     a_pulse_polarity  ;
-	wire                     a_pulse_valid     ;
+	wire [COUNTER_WIDTH-1:0] a_pulse_width         ;
+	wire                     a_pulse_polarity      ;
+	wire                     a_pulse_valid         ;
 	
-	wire [COUNTER_WIDTH-1:0] b_pulse_width     ;
-	wire                     b_pulse_polarity  ;
-	wire                     b_pulse_valid     ;
+	wire [COUNTER_WIDTH-1:0] b_pulse_width         ;
+	wire                     b_pulse_polarity      ;
+	wire                     b_pulse_valid         ;
 	
 	assign clear_displacement = 0;
 	
 	quadrature #(
-		.COUNTER_WIDTH(COUNTER_WIDTH) // integer := 32
+		.COUNTER_WIDTH(COUNTER_WIDTH)
 	) dec (
-		.in_a(in_a), // in std_logic;
-		.in_b(in_b), // in std_logic;
+		.in_a(in_a),
+		.in_b(in_b),
 		
-		.hw_err(hw_err), // out std_logic;
+		.hw_err(hw_err),
 		
-		.displacement      (displacement      ), // out std_logic_vector(COUNTER_WIDTH-1 downto 0);
-		.clear_displacement(clear_displacement), // in  std_logic;
+		.displacement          (displacement          ),
+		.displacement_updated  (displacement_updated  ),
+		.clear_displacement    (clear_displacement    ),
 		
-		.phase_offset      (phase_offset      ), // out std_logic_vector(COUNTER_WIDTH-1 downto 0);
-		.phase_offset_valid(phase_offset_valid), // out std_logic;
+		.phase_offset          (phase_offset          ),
+		.phase_offset_valid    (phase_offset_valid    ),
+		
+		.antiphase_offset      (antiphase_offset      ),
+		.antiphase_offset_valid(antiphase_offset_valid),
 		                    
-		.a_pulse_width     (a_pulse_width     ), // out std_logic_vector(COUNTER_WIDTH-1 downto 0);
-		.a_pulse_polarity  (a_pulse_polarity  ), // out std_logic;
-		.a_pulse_valid     (a_pulse_valid     ), // out std_logic;
+		.a_pulse_width         (a_pulse_width         ),
+		.a_pulse_polarity      (a_pulse_polarity      ),
+		.a_pulse_valid         (a_pulse_valid         ),
 		                    
-		.b_pulse_width     (b_pulse_width     ), // out std_logic_vector(COUNTER_WIDTH-1 downto 0);
-		.b_pulse_polarity  (b_pulse_polarity  ), // out std_logic;
-		.b_pulse_valid     (b_pulse_valid     ), // out std_logic;
+		.b_pulse_width         (b_pulse_width         ),
+		.b_pulse_polarity      (b_pulse_polarity      ),
+		.b_pulse_valid         (b_pulse_valid         ),
 		
-		.clk  (clk  ), // in std_logic;
-		.rst_n(rst_n)  // in std_logic
+		.clk  (clk  ),
+		.rst_n(rst_n)
 	);
 	
 	initial begin

@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="10000000001fs"></ZoomEndTime>
-      <Cursor1Time time="3795000000fs"></Cursor1Time>
+      <ZoomEndTime time="20000000001fs"></ZoomEndTime>
+      <Cursor1Time time="20000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="263"></NameColumnWidth>
-      <ValueColumnWidth column_width="75"></ValueColumnWidth>
+      <ValueColumnWidth column_width="67"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="21" />
+   <WVObjectSize size="24" />
    <wvobject fp_name="/quadrature_tb/num_stages" type="array">
       <obj_property name="ElementShortName">num_stages[31:0]</obj_property>
       <obj_property name="ObjectShortName">num_stages[31:0]</obj_property>
@@ -77,6 +77,10 @@
       <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
       <obj_property name="AnalogHorizLine">0.000000</obj_property>
    </wvobject>
+   <wvobject fp_name="/quadrature_tb/displacement_updated" type="logic">
+      <obj_property name="ElementShortName">displacement_updated</obj_property>
+      <obj_property name="ObjectShortName">displacement_updated</obj_property>
+   </wvobject>
    <wvobject fp_name="/quadrature_tb/a_pulse_width" type="array">
       <obj_property name="ElementShortName">a_pulse_width[31:0]</obj_property>
       <obj_property name="ObjectShortName">a_pulse_width[31:0]</obj_property>
@@ -111,6 +115,15 @@
    <wvobject fp_name="/quadrature_tb/phase_offset_valid" type="logic">
       <obj_property name="ElementShortName">phase_offset_valid</obj_property>
       <obj_property name="ObjectShortName">phase_offset_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/antiphase_offset" type="array">
+      <obj_property name="ElementShortName">antiphase_offset[31:0]</obj_property>
+      <obj_property name="ObjectShortName">antiphase_offset[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/antiphase_offset_valid" type="logic">
+      <obj_property name="ElementShortName">antiphase_offset_valid</obj_property>
+      <obj_property name="ObjectShortName">antiphase_offset_valid</obj_property>
    </wvobject>
    <wvobject fp_name="/quadrature_tb/COUNTER_WIDTH" type="array">
       <obj_property name="ElementShortName">COUNTER_WIDTH[31:0]</obj_property>

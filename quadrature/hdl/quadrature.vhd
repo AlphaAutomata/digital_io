@@ -12,19 +12,23 @@ entity quadrature is
 		
 		hw_err : out std_logic;
 		
-		displacement       : out std_logic_vector(COUNTER_WIDTH-1 downto 0);
-		clear_displacement : in  std_logic;
+		displacement           : out std_logic_vector(COUNTER_WIDTH-1 downto 0);
+		displacement_updated   : out std_logic;
+		clear_displacement     : in  std_logic;
 		
-		phase_offset       : out std_logic_vector(COUNTER_WIDTH-1 downto 0);
-		phase_offset_valid : out std_logic;
+		phase_offset           : out std_logic_vector(COUNTER_WIDTH-1 downto 0);
+		phase_offset_valid     : out std_logic;
 		
-		a_pulse_width      : out std_logic_vector(COUNTER_WIDTH-1 downto 0);
-		a_pulse_polarity   : out std_logic;
-		a_pulse_valid      : out std_logic;
+		antiphase_offset       : out std_logic_vector(COUNTER_WIDTH-1 downto 0);
+		antiphase_offset_valid : out std_logic;
 		
-		b_pulse_width      : out std_logic_vector(COUNTER_WIDTH-1 downto 0);
-		b_pulse_polarity   : out std_logic;
-		b_pulse_valid      : out std_logic;
+		a_pulse_width          : out std_logic_vector(COUNTER_WIDTH-1 downto 0);
+		a_pulse_polarity       : out std_logic;
+		a_pulse_valid          : out std_logic;
+		
+		b_pulse_width          : out std_logic_vector(COUNTER_WIDTH-1 downto 0);
+		b_pulse_polarity       : out std_logic;
+		b_pulse_valid          : out std_logic;
 		
 		clk   : in std_logic;
 		rst_n : in std_logic
@@ -37,18 +41,22 @@ architecture arch of quadrature is
 	
 	signal hw_err_next : std_logic;
 	
-	signal displacement_next       : std_logic_vector(COUNTER_WIDTH-1 downto 0);
+	signal displacement_next           : std_logic_vector(COUNTER_WIDTH-1 downto 0);
+	signal displacement_updated_next   : std_logic;
 	
-	signal phase_offset_next       : std_logic_vector(COUNTER_WIDTH-1 downto 0);
-	signal phase_offset_valid_next : std_logic;
+	signal phase_offset_next           : std_logic_vector(COUNTER_WIDTH-1 downto 0);
+	signal phase_offset_valid_next     : std_logic;
 	
-	signal a_pulse_width_next      : std_logic_vector(COUNTER_WIDTH-1 downto 0);
-	signal a_pulse_polarity_next   : std_logic;
-	signal a_pulse_valid_next      : std_logic;
+	signal antiphase_offset_next       : std_logic_vector(COUNTER_WIDTH-1 downto 0);
+	signal antiphase_offset_valid_next : std_logic;
 	
-	signal b_pulse_width_next      : std_logic_vector(COUNTER_WIDTH-1 downto 0);
-	signal b_pulse_polarity_next   : std_logic;
-	signal b_pulse_valid_next      : std_logic;
+	signal a_pulse_width_next          : std_logic_vector(COUNTER_WIDTH-1 downto 0);
+	signal a_pulse_polarity_next       : std_logic;
+	signal a_pulse_valid_next          : std_logic;
+	
+	signal b_pulse_width_next          : std_logic_vector(COUNTER_WIDTH-1 downto 0);
+	signal b_pulse_polarity_next       : std_logic;
+	signal b_pulse_valid_next          : std_logic;
 	
 	signal a_time_since_edge : std_logic_vector(COUNTER_WIDTH-1 downto 0);
 	signal b_time_since_edge : std_logic_vector(COUNTER_WIDTH-1 downto 0);
@@ -57,34 +65,42 @@ architecture arch of quadrature is
 	signal b_time_since_edge_next : std_logic_vector(COUNTER_WIDTH-1 downto 0);
 begin
 	process (all) begin
-		hw_err_next             <= '0';
-		displacement_next       <= displacement;
-		phase_offset_next       <= phase_offset;
-		phase_offset_valid_next <= '0';
-		a_pulse_width_next      <= a_pulse_width;
-		a_pulse_polarity_next   <= a_pulse_polarity;
-		a_pulse_valid_next      <= '0';
-		b_pulse_width_next      <= b_pulse_width;
-		b_pulse_polarity_next   <= b_pulse_polarity;
-		b_pulse_valid_next      <= '0';
-		a_time_since_edge_next  <= std_logic_vector(unsigned(a_time_since_edge) + 1);
-		b_time_since_edge_next  <= std_logic_vector(unsigned(b_time_since_edge) + 1);
+		hw_err_next                 <= '0';
+		displacement_next           <= displacement;
+		displacement_updated_next   <= '0';
+		phase_offset_next           <= phase_offset;
+		phase_offset_valid_next     <= '0';
+		antiphase_offset_next       <= antiphase_offset;
+		antiphase_offset_valid_next <= '0';
+		a_pulse_width_next          <= a_pulse_width;
+		a_pulse_polarity_next       <= a_pulse_polarity;
+		a_pulse_valid_next          <= '0';
+		b_pulse_width_next          <= b_pulse_width;
+		b_pulse_polarity_next       <= b_pulse_polarity;
+		b_pulse_valid_next          <= '0';
+		a_time_since_edge_next      <= std_logic_vector(unsigned(a_time_since_edge) + 1);
+		b_time_since_edge_next      <= std_logic_vector(unsigned(b_time_since_edge) + 1);
 		
 		if ((in_a_reg /= in_a) and (in_b_reg /= in_b)) then
 			hw_err_next <= '1';
 		elsif (clear_displacement = '1') then
-			displacement_next <= (others => '0');
+			displacement_next         <= (others => '0');
+			displacement_updated_next <= '1';
 		elsif (in_a_reg /= in_a) then
 			if (in_a = in_b) then
-				displacement_next <= std_logic_vector(signed(displacement) + 1);
+				displacement_next         <= std_logic_vector(signed(displacement) + 1);
+				displacement_updated_next <= '1';
 			else
-				displacement_next <= std_logic_vector(signed(displacement) - 1);
+				displacement_next         <= std_logic_vector(signed(displacement) - 1);
+				displacement_updated_next <= '1';
 			end if;
 		elsif (in_b_reg /= in_b) then
 			if (in_a = in_b) then
-				displacement_next <= std_logic_vector(signed(displacement) - 1);
+				displacement_next         <= std_logic_vector(signed(displacement) - 1);
+				displacement_updated_next <= '1';
 			else
-				displacement_next <= std_logic_vector(signed(displacement) + 1);
+				displacement_next         <= std_logic_vector(signed(displacement) + 1);
+				displacement_updated_next <= '1';
 			end if;
 		end if;
 		
@@ -107,8 +123,16 @@ begin
 				phase_offset_next       <= std_logic_vector(unsigned(b_time_since_edge) + 1);
 				phase_offset_valid_next <= '1';
 			elsif (in_b = in_a_reg) then
-				phase_offset_next       <= std_logic_vector(0 - unsigned(a_time_since_edge) - 1);
+				phase_offset_next       <= std_logic_vector(-1 - unsigned(a_time_since_edge));
 				phase_offset_valid_next <= '1';
+			end if;
+		else
+			if (in_a /= in_b_reg) then
+				antiphase_offset_next       <= std_logic_vector(-1 - unsigned(b_time_since_edge));
+				antiphase_offset_valid_next <= '1';
+			elsif (in_b /= in_a_reg) then
+				antiphase_offset_next       <= std_logic_vector(unsigned(a_time_since_edge) + 1);
+				antiphase_offset_valid_next <= '1';
 			end if;
 		end if;
 	end process;
@@ -119,31 +143,37 @@ begin
 			in_b_reg <= in_b;
 			
 			if (rst_n = '0') then
-				hw_err             <= '0';
-				displacement       <= (others => '0');
-				phase_offset       <= (others => '0');
-				phase_offset_valid <= '0';
-				a_pulse_width      <= (others => '0');
-				a_pulse_polarity   <= '0';
-				a_pulse_valid      <= '0';
-				b_pulse_width      <= (others => '0');
-				b_pulse_polarity   <= '0';
-				b_pulse_valid      <= '0';
-				a_time_since_edge  <= (others => '0');
-				b_time_since_edge  <= (others => '0');
+				hw_err                 <= '0';
+				displacement           <= (others => '0');
+				displacement_updated   <= '0';
+				phase_offset           <= (others => '0');
+				phase_offset_valid     <= '0';
+				antiphase_offset       <= (others => '0');
+				antiphase_offset_valid <= '0';
+				a_pulse_width          <= (others => '0');
+				a_pulse_polarity       <= '0';
+				a_pulse_valid          <= '0';
+				b_pulse_width          <= (others => '0');
+				b_pulse_polarity       <= '0';
+				b_pulse_valid          <= '0';
+				a_time_since_edge      <= (others => '0');
+				b_time_since_edge      <= (others => '0');
 			else
-				hw_err             <= hw_err_next            ;
-				displacement       <= displacement_next      ;
-				phase_offset       <= phase_offset_next      ;
-				phase_offset_valid <= phase_offset_valid_next;
-				a_pulse_width      <= a_pulse_width_next     ;
-				a_pulse_polarity   <= a_pulse_polarity_next  ;
-				a_pulse_valid      <= a_pulse_valid_next     ;
-				b_pulse_width      <= b_pulse_width_next     ;
-				b_pulse_polarity   <= b_pulse_polarity_next  ;
-				b_pulse_valid      <= b_pulse_valid_next     ;
-				a_time_since_edge  <= a_time_since_edge_next ;
-				b_time_since_edge  <= b_time_since_edge_next ;
+				hw_err                 <= hw_err_next                ;
+				displacement           <= displacement_next          ;
+				displacement_updated   <= displacement_updated_next  ;
+				phase_offset           <= phase_offset_next          ;
+				phase_offset_valid     <= phase_offset_valid_next    ;
+				antiphase_offset       <= antiphase_offset_next      ;
+				antiphase_offset_valid <= antiphase_offset_valid_next;
+				a_pulse_width          <= a_pulse_width_next         ;
+				a_pulse_polarity       <= a_pulse_polarity_next      ;
+				a_pulse_valid          <= a_pulse_valid_next         ;
+				b_pulse_width          <= b_pulse_width_next         ;
+				b_pulse_polarity       <= b_pulse_polarity_next      ;
+				b_pulse_valid          <= b_pulse_valid_next         ;
+				a_time_since_edge      <= a_time_since_edge_next     ;
+				b_time_since_edge      <= b_time_since_edge_next     ;
 			end if;
 		end if;
 	end process;
