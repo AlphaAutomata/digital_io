@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="quadrature_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="quadrature_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="500000fs"></ZoomStartTime>
+      <ZoomEndTime time="6315500001fs"></ZoomEndTime>
+      <Cursor1Time time="1630500000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="263"></NameColumnWidth>
+      <ValueColumnWidth column_width="79"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="19" />
+   <wvobject fp_name="/quadrature_tb/num_stages" type="array">
+      <obj_property name="ElementShortName">num_stages[31:0]</obj_property>
+      <obj_property name="ObjectShortName">num_stages[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/time_increment" type="array">
+      <obj_property name="ElementShortName">time_increment[31:0]</obj_property>
+      <obj_property name="ObjectShortName">time_increment[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/stage_increment" type="array">
+      <obj_property name="ElementShortName">stage_increment[31:0]</obj_property>
+      <obj_property name="ObjectShortName">stage_increment[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/time_counter" type="array">
+      <obj_property name="ElementShortName">time_counter[31:0]</obj_property>
+      <obj_property name="ObjectShortName">time_counter[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/stage" type="array">
+      <obj_property name="ElementShortName">stage[1:0]</obj_property>
+      <obj_property name="ObjectShortName">stage[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/rst_n" type="logic">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/in_a" type="logic">
+      <obj_property name="ElementShortName">in_a</obj_property>
+      <obj_property name="ObjectShortName">in_a</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/in_b" type="logic">
+      <obj_property name="ElementShortName">in_b</obj_property>
+      <obj_property name="ObjectShortName">in_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/a_pulse_width" type="array">
+      <obj_property name="ElementShortName">a_pulse_width[31:0]</obj_property>
+      <obj_property name="ObjectShortName">a_pulse_width[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/a_pulse_polarity" type="logic">
+      <obj_property name="ElementShortName">a_pulse_polarity</obj_property>
+      <obj_property name="ObjectShortName">a_pulse_polarity</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/a_pulse_valid" type="logic">
+      <obj_property name="ElementShortName">a_pulse_valid</obj_property>
+      <obj_property name="ObjectShortName">a_pulse_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/b_pulse_width" type="array">
+      <obj_property name="ElementShortName">b_pulse_width[31:0]</obj_property>
+      <obj_property name="ObjectShortName">b_pulse_width[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/b_pulse_polarity" type="logic">
+      <obj_property name="ElementShortName">b_pulse_polarity</obj_property>
+      <obj_property name="ObjectShortName">b_pulse_polarity</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/b_pulse_valid" type="logic">
+      <obj_property name="ElementShortName">b_pulse_valid</obj_property>
+      <obj_property name="ObjectShortName">b_pulse_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/phase_offset" type="array">
+      <obj_property name="ElementShortName">phase_offset[31:0]</obj_property>
+      <obj_property name="ObjectShortName">phase_offset[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/phase_offset_valid" type="logic">
+      <obj_property name="ElementShortName">phase_offset_valid</obj_property>
+      <obj_property name="ObjectShortName">phase_offset_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/COUNTER_WIDTH" type="array">
+      <obj_property name="ElementShortName">COUNTER_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">COUNTER_WIDTH[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/quadrature_tb/pattern" type="array">
+      <obj_property name="ElementShortName">pattern[7:0]</obj_property>
+      <obj_property name="ObjectShortName">pattern[7:0]</obj_property>
+   </wvobject>
+</wave_config>
