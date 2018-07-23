@@ -23,6 +23,11 @@ module quadrature_tb();
 	
 	reg in_a;
 	reg in_b;
+		
+	wire hw_err;
+		
+	wire [COUNTER_WIDTH-1:0] displacement      ;
+	wire                     clear_displacement;
 	
 	wire [COUNTER_WIDTH-1:0] phase_offset      ;
 	wire                     phase_offset_valid;
@@ -35,11 +40,18 @@ module quadrature_tb();
 	wire                     b_pulse_polarity  ;
 	wire                     b_pulse_valid     ;
 	
+	assign clear_displacement = 0;
+	
 	quadrature #(
-		.COUNTER_WIDTH(COUNTER_WIDTH) // : integer := 32
+		.COUNTER_WIDTH(COUNTER_WIDTH) // integer := 32
 	) dec (
-		.in_a(in_a), // : in std_logic;
-		.in_b(in_b), // : in std_logic;
+		.in_a(in_a), // in std_logic;
+		.in_b(in_b), // in std_logic;
+		
+		.hw_err(hw_err), // out std_logic;
+		
+		.displacement      (displacement      ), // out std_logic_vector(COUNTER_WIDTH-1 downto 0);
+		.clear_displacement(clear_displacement), // in  std_logic;
 		
 		.phase_offset      (phase_offset      ), // out std_logic_vector(COUNTER_WIDTH-1 downto 0);
 		.phase_offset_valid(phase_offset_valid), // out std_logic;
