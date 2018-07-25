@@ -26,16 +26,21 @@ module pwm_cell_tb();
 	integer iteration;
 	integer test_case;
 	
+	reg up_ndown;
+	
+	reg [COUNTER_WIDTH-1:0] period;
+	
 	wire pwm;
 	
 	reg  [COUNTER_WIDTH-1:0] counter             ;
 	wire [COUNTER_WIDTH-1:0] counter_plus_period ;
 	wire [COUNTER_WIDTH-1:0] counter_minus_period;
 	
-	reg                     polarity ;
-	reg [COUNTER_WIDTH-1:0] period   ;
-	reg [COUNTER_WIDTH-1:0] duty     ;
-	reg [COUNTER_WIDTH-1:0] phase    ;
+	reg count_up_down;
+	reg polarity;
+	
+	reg [COUNTER_WIDTH-1:0] duty ;
+	reg [COUNTER_WIDTH-1:0] phase;
 	
 	pwm_cell #(
 		.COUNTER_WIDTH(COUNTER_WIDTH)
@@ -46,50 +51,91 @@ module pwm_cell_tb();
 		.counter_plus_period (counter_plus_period ),
 		.counter_minus_period(counter_minus_period),
 		
-		.polarity (polarity ),
-		.period   (period   ),
-		.duty     (duty     ),
-		.phase    (phase    )
+		.count_up_down(count_up_down),
+		.polarity     (polarity     ),
+		
+		.duty (duty ),
+		.phase(phase)
 	);
 	
 	initial begin
 		iteration <= ITERATIONS_PER_CASE;
 		test_case <= 1;
 		
-		counter   <= 0;
+		up_ndown <= 1;
 		
-		polarity  <= $random;
-		period    <= test_cases[0][2];
-		duty      <= test_cases[0][1];
-		phase     <= test_cases[0][0];
+		counter <= 0;
+		
+		count_up_down <= $random;
+		polarity      <= $random;
+		
+		period <= test_cases[0][2];
+		duty   <= test_cases[0][1];
+		phase  <= test_cases[0][0];
 	end
 	
-	assign counter_plus_period =  counter + period;
+	assign counter_plus_period  = counter + period;
 	assign counter_minus_period = counter - period;
 	
 	always #10 begin
-		if (counter >= period-1) begin
-			if (iteration == 0) begin
-				iteration <= ITERATIONS_PER_CASE;
-				if (test_case == 15) begin
-					test_case <= 0;
+		if (count_up_down == 1) begin
+			if (counter >= (period/2 - 1) && up_ndown == 1) begin
+				up_ndown <= 0;
+			end else if (counter <= 1 && up_ndown == 0) begin
+				if (iteration == 0) begin
+					iteration <= ITERATIONS_PER_CASE;
+					if (test_case == 15) begin
+						test_case <= 0;
+					end else begin
+						test_case <= test_case + 1;
+					end
+					
+					counter <= 0;
+					
+					count_up_down <= $random;
+					polarity      <= $random;
+					
+					period <= test_cases[test_case][2];
+					duty   <= test_cases[test_case][1];
+					phase  <= test_cases[test_case][0];
 				end else begin
-					test_case <= test_case + 1;
+					iteration <= iteration - 1;
 				end
-			
-				counter   <= 0;
-			
-				polarity  <= $random;
-				period    <= test_cases[test_case][2];
-				duty      <= test_cases[test_case][1];
-				phase     <= test_cases[test_case][0];
-			end else begin
-				iteration <= iteration - 1;
+				
+				up_ndown <= 1;
 			end
 			
-			counter <= 0;
+			if (up_ndown == 1) begin
+				counter <= counter + 1;
+			end else begin
+				counter <= counter - 1;
+			end
 		end else begin
-			counter <= counter + 1;
+			if (counter >= period-1) begin
+				if (iteration == 0) begin
+					iteration <= ITERATIONS_PER_CASE;
+					if (test_case == 15) begin
+						test_case <= 0;
+					end else begin
+						test_case <= test_case + 1;
+					end
+				
+					counter <= 0;
+					
+					count_up_down <= $random;
+					polarity      <= $random;
+					
+					period <= test_cases[test_case][2];
+					duty   <= test_cases[test_case][1];
+					phase  <= test_cases[test_case][0];
+				end else begin
+					iteration <= iteration - 1;
+				end
+				
+				counter <= 0;
+			end else begin
+				counter <= counter + 1;
+			end
 		end
 	end
 endmodule

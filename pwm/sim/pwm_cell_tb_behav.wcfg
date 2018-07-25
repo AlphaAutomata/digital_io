@@ -11,62 +11,141 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1000000000001fs"></ZoomEndTime>
-      <Cursor1Time time="1000000000000fs"></Cursor1Time>
+      <ZoomStartTime time="20810000000fs"></ZoomStartTime>
+      <ZoomEndTime time="151010000001fs"></ZoomEndTime>
+      <Cursor1Time time="47500000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="243"></NameColumnWidth>
-      <ValueColumnWidth column_width="68"></ValueColumnWidth>
+      <ValueColumnWidth column_width="60"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
-   <wvobject fp_name="/pwm_cell_tb/iteration" type="array">
-      <obj_property name="ElementShortName">iteration[31:0]</obj_property>
-      <obj_property name="ObjectShortName">iteration[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <WVObjectSize size="6" />
+   <wvobject fp_name="group3952" type="group">
+      <obj_property name="label">top_tb</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/pwm_cell_tb/iteration" type="array">
+         <obj_property name="ElementShortName">iteration[31:0]</obj_property>
+         <obj_property name="ObjectShortName">iteration[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/test_case" type="array">
+         <obj_property name="ElementShortName">test_case[31:0]</obj_property>
+         <obj_property name="ObjectShortName">test_case[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/up_ndown" type="logic">
+         <obj_property name="ElementShortName">up_ndown</obj_property>
+         <obj_property name="ObjectShortName">up_ndown</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/period" type="array">
+         <obj_property name="ElementShortName">period[31:0]</obj_property>
+         <obj_property name="ObjectShortName">period[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/pwm" type="logic">
+         <obj_property name="ElementShortName">pwm</obj_property>
+         <obj_property name="ObjectShortName">pwm</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/counter" type="array">
+         <obj_property name="ElementShortName">counter[31:0]</obj_property>
+         <obj_property name="ObjectShortName">counter[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/counter_plus_period" type="array">
+         <obj_property name="ElementShortName">counter_plus_period[31:0]</obj_property>
+         <obj_property name="ObjectShortName">counter_plus_period[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/counter_minus_period" type="array">
+         <obj_property name="ElementShortName">counter_minus_period[31:0]</obj_property>
+         <obj_property name="ObjectShortName">counter_minus_period[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/count_up_down" type="logic">
+         <obj_property name="ElementShortName">count_up_down</obj_property>
+         <obj_property name="ObjectShortName">count_up_down</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/polarity" type="logic">
+         <obj_property name="ElementShortName">polarity</obj_property>
+         <obj_property name="ObjectShortName">polarity</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/duty" type="array">
+         <obj_property name="ElementShortName">duty[31:0]</obj_property>
+         <obj_property name="ObjectShortName">duty[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/phase" type="array">
+         <obj_property name="ElementShortName">phase[31:0]</obj_property>
+         <obj_property name="ObjectShortName">phase[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/pwm_cell_tb/test_case" type="array">
-      <obj_property name="ElementShortName">test_case[31:0]</obj_property>
-      <obj_property name="ObjectShortName">test_case[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="group3965" type="group">
+      <obj_property name="label">dut</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/pwm_cell_tb/dut/pwm" type="logic">
+         <obj_property name="ElementShortName">pwm</obj_property>
+         <obj_property name="ObjectShortName">pwm</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/dut/counter" type="array">
+         <obj_property name="ElementShortName">counter[31:0]</obj_property>
+         <obj_property name="ObjectShortName">counter[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/dut/counter_plus_period" type="array">
+         <obj_property name="ElementShortName">counter_plus_period[31:0]</obj_property>
+         <obj_property name="ObjectShortName">counter_plus_period[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/dut/counter_minus_period" type="array">
+         <obj_property name="ElementShortName">counter_minus_period[31:0]</obj_property>
+         <obj_property name="ObjectShortName">counter_minus_period[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/dut/count_up_down" type="logic">
+         <obj_property name="ElementShortName">count_up_down</obj_property>
+         <obj_property name="ObjectShortName">count_up_down</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/dut/polarity" type="logic">
+         <obj_property name="ElementShortName">polarity</obj_property>
+         <obj_property name="ObjectShortName">polarity</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/dut/duty" type="array">
+         <obj_property name="ElementShortName">duty[31:0]</obj_property>
+         <obj_property name="ObjectShortName">duty[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/dut/phase" type="array">
+         <obj_property name="ElementShortName">phase[31:0]</obj_property>
+         <obj_property name="ObjectShortName">phase[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/dut/comparison" type="logic">
+         <obj_property name="ElementShortName">comparison</obj_property>
+         <obj_property name="ObjectShortName">comparison</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/dut/thresh_high" type="array">
+         <obj_property name="ElementShortName">thresh_high[31:0]</obj_property>
+         <obj_property name="ObjectShortName">thresh_high[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pwm_cell_tb/dut/thresh_low" type="array">
+         <obj_property name="ElementShortName">thresh_low[31:0]</obj_property>
+         <obj_property name="ObjectShortName">thresh_low[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/pwm_cell_tb/pwm" type="logic">
-      <obj_property name="ElementShortName">pwm</obj_property>
-      <obj_property name="ObjectShortName">pwm</obj_property>
-   </wvobject>
-   <wvobject fp_name="/pwm_cell_tb/counter" type="array">
-      <obj_property name="ElementShortName">counter[31:0]</obj_property>
-      <obj_property name="ObjectShortName">counter[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/pwm_cell_tb/counter_plus_period" type="array">
-      <obj_property name="ElementShortName">counter_plus_period[31:0]</obj_property>
-      <obj_property name="ObjectShortName">counter_plus_period[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/pwm_cell_tb/counter_minus_period" type="array">
-      <obj_property name="ElementShortName">counter_minus_period[31:0]</obj_property>
-      <obj_property name="ObjectShortName">counter_minus_period[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/pwm_cell_tb/polarity" type="logic">
-      <obj_property name="ElementShortName">polarity</obj_property>
-      <obj_property name="ObjectShortName">polarity</obj_property>
-   </wvobject>
-   <wvobject fp_name="/pwm_cell_tb/period" type="array">
-      <obj_property name="ElementShortName">period[31:0]</obj_property>
-      <obj_property name="ObjectShortName">period[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/pwm_cell_tb/duty" type="array">
-      <obj_property name="ElementShortName">duty[31:0]</obj_property>
-      <obj_property name="ObjectShortName">duty[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/pwm_cell_tb/phase" type="array">
-      <obj_property name="ElementShortName">phase[31:0]</obj_property>
-      <obj_property name="ObjectShortName">phase[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/pwm_cell_tb/dut/COUNTER_WIDTH" type="other">
+      <obj_property name="ElementShortName">COUNTER_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">COUNTER_WIDTH</obj_property>
    </wvobject>
    <wvobject fp_name="/pwm_cell_tb/COUNTER_WIDTH" type="array">
       <obj_property name="ElementShortName">COUNTER_WIDTH[31:0]</obj_property>

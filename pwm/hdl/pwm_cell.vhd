@@ -13,10 +13,11 @@ entity pwm_cell is
 		counter_plus_period  : in std_logic_vector(COUNTER_WIDTH-1 downto 0);
 		counter_minus_period : in std_logic_vector(COUNTER_WIDTH-1 downto 0);
 		
-		polarity : in std_logic;
-		period   : in std_logic_vector(COUNTER_WIDTH-1 downto 0);
-		duty     : in std_logic_vector(COUNTER_WIDTH-1 downto 0);
-		phase    : in std_logic_vector(COUNTER_WIDTH-1 downto 0)
+		count_up_down : in std_logic;
+		polarity      : in std_logic;
+		
+		duty  : in std_logic_vector(COUNTER_WIDTH-1 downto 0);
+		phase : in std_logic_vector(COUNTER_WIDTH-1 downto 0)
 	);
 end pwm_cell;
 
@@ -28,32 +29,36 @@ architecture arch of pwm_cell is
 begin
 	pwm <= comparison when (polarity = '1') else (not comparison);
 	
-	thresh_high <= std_logic_vector(-signed(phase) + signed(duty));
+	thresh_high <=
+		std_logic_vector(-signed(phase) + signed(duty)) when (count_up_down = '0') else
+		std_logic_vector(shift_right(signed(duty), 1));
 	thresh_low  <= std_logic_vector(-signed(phase));
 	
 	-- Drive PWM output based on comparison mode, counter value, and the comparison thresholds.
-	process (
-		counter,
-		counter_plus_period,
-		counter_minus_period,
-		thresh_high,
-		thresh_low
-	) begin
-		if (
-			(
-				(signed(counter) < signed(thresh_high)) and
-				(signed(counter) >= signed(thresh_low))
-			) or (
-				(signed(counter_plus_period) < signed(thresh_high)) and
-				(signed(counter_plus_period) >= signed(thresh_low))
-			) or (
-				(signed(counter_minus_period) < signed(thresh_high)) and
-				(signed(counter_minus_period) >= signed(thresh_low))
-			)
-		) then
-			comparison <= '1';
+	process (all) begin
+		if (count_up_down = '1') then
+			if (signed(counter) <= signed(thresh_high)) then
+				comparison <= '1';
+			else
+				comparison <= '0';
+			end if;
 		else
-			comparison <= '0';
+			if (
+				(
+					(signed(counter) < signed(thresh_high)) and
+					(signed(counter) >= signed(thresh_low))
+				) or (
+					(signed(counter_plus_period) < signed(thresh_high)) and
+					(signed(counter_plus_period) >= signed(thresh_low))
+				) or (
+					(signed(counter_minus_period) < signed(thresh_high)) and
+					(signed(counter_minus_period) >= signed(thresh_low))
+				)
+			) then
+				comparison <= '1';
+			else
+				comparison <= '0';
+			end if;
 		end if;
 	end process;
 end arch;
