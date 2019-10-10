@@ -8,7 +8,7 @@ entity pw_bit_cell is
         COUNTER_WIDTH : integer := 32;
 
         DATA_AXIS_DATA_WIDTH : integer := 8;
-        CFG_AXIS_DATA_WIDTH  : integer := 96
+        CFG_AXIS_DATA_WIDTH  : integer := 32
     );
     port (
         txd : out std_logic;
@@ -18,9 +18,17 @@ entity pw_bit_cell is
         data_s_axis_tvalid : in  std_logic;
         data_s_axis_tready : out std_logic;
 
-        cfg_s_axis_tdata  : in  std_logic_vector(CFG_AXIS_DATA_WIDTH-1 downto 0);
-        cfg_s_axis_tvalid : in  std_logic;
-        cfg_s_axis_tready : out std_logic;
+        cfg_period_s_axis_tdata  : in  std_logic_vector(CFG_AXIS_DATA_WIDTH-1 downto 0);
+        cfg_period_s_axis_tvalid : in  std_logic;
+        cfg_period_s_axis_tready : out std_logic;
+
+        cfg_duty_hi_s_axis_tdata  : in  std_logic_vector(CFG_AXIS_DATA_WIDTH-1 downto 0);
+        cfg_duty_hi_s_axis_tvalid : in  std_logic;
+        cfg_duty_hi_s_axis_tready : out std_logic;
+
+        cfg_duty_lo_s_axis_tdata  : in  std_logic_vector(CFG_AXIS_DATA_WIDTH-1 downto 0);
+        cfg_duty_lo_s_axis_tvalid : in  std_logic;
+        cfg_duty_lo_s_axis_tready : out std_logic;
 
         aclk    : in std_logic;
         aresetn : in std_logic
@@ -35,10 +43,6 @@ architecture arch of pw_bit_cell is
 
     signal tx_buffer      : std_logic_vector(DATA_AXIS_DATA_WIDTH-1 downto 0);
     signal tx_buffer_next : std_logic_vector(DATA_AXIS_DATA_WIDTH-1 downto 0);
-
-    signal data_period_bits       : std_logic_vector(COUNTER_WIDTH-1 downto 0);
-    signal data_high_time_hi_bits : std_logic_vector(COUNTER_WIDTH-1 downto 0);
-    signal data_high_time_lo_bits : std_logic_vector(COUNTER_WIDTH-1 downto 0);
 
     signal period      : std_logic_vector(COUNTER_WIDTH-1 downto 0);
     signal period_next : std_logic_vector(COUNTER_WIDTH-1 downto 0);
@@ -60,16 +64,16 @@ architecture arch of pw_bit_cell is
     signal last      : std_logic;
     signal last_next : std_logic;
 begin
-    data_period_bits       <= cfg_s_axis_tdata(3*COUNTER_WIDTH-1 downto 2*COUNTER_WIDTH);
-    data_high_time_hi_bits <= cfg_s_axis_tdata(2*COUNTER_WIDTH-1 downto COUNTER_WIDTH);
-    data_high_time_lo_bits <= cfg_s_axis_tdata(COUNTER_WIDTH-1 downto 0);
-
     process (
-        data_s_axis_tdata ,
-        data_s_axis_tlast ,
-        data_s_axis_tvalid,
-        cfg_s_axis_tdata  ,
-        cfg_s_axis_tvalid ,
+        data_s_axis_tdata        ,
+        data_s_axis_tlast        ,
+        data_s_axis_tvalid       ,
+        cfg_period_s_axis_tdata  ,
+        cfg_period_s_axis_tvalid ,
+        cfg_duty_hi_s_axis_tdata ,
+        cfg_duty_hi_s_axis_tvalid,
+        cfg_duty_lo_s_axis_tdata ,
+        cfg_duty_lo_s_axis_tvalid,
         tx_state    ,
         tx_buffer   ,
         period      ,
@@ -93,31 +97,39 @@ begin
 
         case (tx_state) is
             when idle =>
-                txd                <= '0';
-                data_s_axis_tready <= '1';
-                cfg_s_axis_tready  <= '1';
+                txd                       <= '0';
+                data_s_axis_tready        <= '1';
+                cfg_period_s_axis_tready  <= '1';
+                cfg_duty_hi_s_axis_tready <= '1';
+                cfg_duty_lo_s_axis_tready <= '1';
 
                 if (data_s_axis_tvalid = '1') then
                     tx_state_next  <= tx_bit_high;
                     tx_buffer_next <= data_s_axis_tdata;
-                    if (cfg_s_axis_tvalid = '1') then
-                        bit_time_cnt_next <= data_period_bits;
+                    if (cfg_period_s_axis_tvalid = '1') then
+                        bit_time_cnt_next <= cfg_period_s_axis_tdata;
                     else
                         bit_time_cnt_next <= period;
                     end if;
                     bit_cnt_next <= (others => '1');
                     last_next    <= data_s_axis_tlast;
                 end if;
-                if (cfg_s_axis_tvalid = '1') then
-                    period_next       <= data_period_bits;
-                    high_time_hi_next <= data_high_time_hi_bits;
-                    high_time_lo_next <= data_high_time_lo_bits;
+                if (cfg_period_s_axis_tvalid = '1') then
+                    period_next <= cfg_period_s_axis_tdata;
+                end if;
+                if (cfg_duty_hi_s_axis_tvalid = '1') then
+                    high_time_hi_next <= cfg_duty_hi_s_axis_tdata;
+                end if;
+                if (cfg_duty_lo_s_axis_tvalid = '1') then
+                    high_time_lo_next <= cfg_duty_lo_s_axis_tdata;
                 end if;
 
             when tx_bit_high =>
-                txd                <= '1';
-                data_s_axis_tready <= '0';
-                cfg_s_axis_tready  <= '0';
+                txd                       <= '1';
+                data_s_axis_tready        <= '0';
+                cfg_period_s_axis_tready  <= '0';
+                cfg_duty_hi_s_axis_tready <= '0';
+                cfg_duty_lo_s_axis_tready <= '0';
 
                 if (tx_buffer(to_integer(unsigned(bit_cnt))) = '1') then
                     if (unsigned(bit_time_cnt) < unsigned(period)-unsigned(high_time_hi)) then
@@ -131,9 +143,11 @@ begin
                 bit_time_cnt_next <= std_logic_vector(unsigned(bit_time_cnt) - 1);
 
             when tx_bit_low =>
-                txd                <= '0';
-                data_s_axis_tready <= '0';
-                cfg_s_axis_tready  <= '0';
+                txd                       <= '0';
+                data_s_axis_tready        <= '0';
+                cfg_period_s_axis_tready  <= '0';
+                cfg_duty_hi_s_axis_tready <= '0';
+                cfg_duty_lo_s_axis_tready <= '0';
 
                 if (unsigned(bit_time_cnt) = 0) then
                     if (unsigned(bit_cnt) = 0) then
@@ -152,9 +166,11 @@ begin
                 end if;
 
             when tx_stop =>
-                txd                <= '0';
-                data_s_axis_tready <= '0';
-                cfg_s_axis_tready  <= '0';
+                txd                       <= '0';
+                data_s_axis_tready        <= '0';
+                cfg_period_s_axis_tready  <= '0';
+                cfg_duty_hi_s_axis_tready <= '0';
+                cfg_duty_lo_s_axis_tready <= '0';
 
                 if (unsigned(bit_time_cnt) = 0) then
                     tx_state_next <= idle;
