@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="xfifo_axis_rd_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="xfifo_axis_rd_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="239160000fs"></ZoomStartTime>
+      <ZoomEndTime time="386760001fs"></ZoomEndTime>
+      <Cursor1Time time="308560000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="228"></NameColumnWidth>
+      <ValueColumnWidth column_width="65"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="2" />
+   <wvobject fp_name="group1769" type="group">
+      <obj_property name="label">dut</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut/fifo_rden" type="logic">
+         <obj_property name="ElementShortName">fifo_rden</obj_property>
+         <obj_property name="ObjectShortName">fifo_rden</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut/fifo_do" type="array">
+         <obj_property name="ElementShortName">fifo_do[31:0]</obj_property>
+         <obj_property name="ObjectShortName">fifo_do[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut/fifo_empty" type="logic">
+         <obj_property name="ElementShortName">fifo_empty</obj_property>
+         <obj_property name="ObjectShortName">fifo_empty</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut/m_axis_tdata" type="array">
+         <obj_property name="ElementShortName">m_axis_tdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tdata[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut/m_axis_tvalid" type="logic">
+         <obj_property name="ElementShortName">m_axis_tvalid</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tvalid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut/m_axis_tready" type="logic">
+         <obj_property name="ElementShortName">m_axis_tready</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut/aclk" type="logic">
+         <obj_property name="ElementShortName">aclk</obj_property>
+         <obj_property name="ObjectShortName">aclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut/aresetn" type="logic">
+         <obj_property name="ElementShortName">aresetn</obj_property>
+         <obj_property name="ObjectShortName">aresetn</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut/fifo_do_valid" type="logic">
+         <obj_property name="ElementShortName">fifo_do_valid</obj_property>
+         <obj_property name="ObjectShortName">fifo_do_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut/m_axis_tdata_reg" type="array">
+         <obj_property name="ElementShortName">m_axis_tdata_reg[31:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tdata_reg[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut/m_axis_tdata_reg_next" type="array">
+         <obj_property name="ElementShortName">m_axis_tdata_reg_next[31:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tdata_reg_next[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut/m_axis_tdata_reg_valid" type="logic">
+         <obj_property name="ElementShortName">m_axis_tdata_reg_valid</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tdata_reg_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut/m_axis_tdata_reg_valid_next" type="logic">
+         <obj_property name="ElementShortName">m_axis_tdata_reg_valid_next</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tdata_reg_valid_next</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group1716" type="group">
+      <obj_property name="label">top</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/xfifo_axis_rd_tb/test_mask_idx" type="array">
+         <obj_property name="ElementShortName">test_mask_idx[4:0]</obj_property>
+         <obj_property name="ObjectShortName">test_mask_idx[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/rst" type="logic">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut_fifo_rden" type="logic">
+         <obj_property name="ElementShortName">dut_fifo_rden</obj_property>
+         <obj_property name="ObjectShortName">dut_fifo_rden</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut_fifo_do" type="array">
+         <obj_property name="ElementShortName">dut_fifo_do[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dut_fifo_do[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut_fifo_empty" type="logic">
+         <obj_property name="ElementShortName">dut_fifo_empty</obj_property>
+         <obj_property name="ObjectShortName">dut_fifo_empty</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut_m_axis_tdata" type="array">
+         <obj_property name="ElementShortName">dut_m_axis_tdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dut_m_axis_tdata[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut_m_axis_tvalid" type="logic">
+         <obj_property name="ElementShortName">dut_m_axis_tvalid</obj_property>
+         <obj_property name="ObjectShortName">dut_m_axis_tvalid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut_m_axis_tready" type="logic">
+         <obj_property name="ElementShortName">dut_m_axis_tready</obj_property>
+         <obj_property name="ObjectShortName">dut_m_axis_tready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut_aclk" type="logic">
+         <obj_property name="ElementShortName">dut_aclk</obj_property>
+         <obj_property name="ObjectShortName">dut_aclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/dut_aresetn" type="logic">
+         <obj_property name="ElementShortName">dut_aresetn</obj_property>
+         <obj_property name="ObjectShortName">dut_aresetn</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/fifo_wren" type="logic">
+         <obj_property name="ElementShortName">fifo_wren</obj_property>
+         <obj_property name="ObjectShortName">fifo_wren</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/fifo_di" type="array">
+         <obj_property name="ElementShortName">fifo_di[31:0]</obj_property>
+         <obj_property name="ObjectShortName">fifo_di[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/fifo_wrcount" type="array">
+         <obj_property name="ElementShortName">fifo_wrcount[8:0]</obj_property>
+         <obj_property name="ObjectShortName">fifo_wrcount[8:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/fifo_almostfull" type="logic">
+         <obj_property name="ElementShortName">fifo_almostfull</obj_property>
+         <obj_property name="ObjectShortName">fifo_almostfull</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/fifo_full" type="logic">
+         <obj_property name="ElementShortName">fifo_full</obj_property>
+         <obj_property name="ObjectShortName">fifo_full</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/fifo_wrerr" type="logic">
+         <obj_property name="ElementShortName">fifo_wrerr</obj_property>
+         <obj_property name="ObjectShortName">fifo_wrerr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/fifo_rden" type="logic">
+         <obj_property name="ElementShortName">fifo_rden</obj_property>
+         <obj_property name="ObjectShortName">fifo_rden</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/fifo_do" type="array">
+         <obj_property name="ElementShortName">fifo_do[31:0]</obj_property>
+         <obj_property name="ObjectShortName">fifo_do[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/fifo_rdcount" type="array">
+         <obj_property name="ElementShortName">fifo_rdcount[8:0]</obj_property>
+         <obj_property name="ObjectShortName">fifo_rdcount[8:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/fifo_almostempty" type="logic">
+         <obj_property name="ElementShortName">fifo_almostempty</obj_property>
+         <obj_property name="ObjectShortName">fifo_almostempty</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/fifo_empty" type="logic">
+         <obj_property name="ElementShortName">fifo_empty</obj_property>
+         <obj_property name="ObjectShortName">fifo_empty</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/fifo_rderr" type="logic">
+         <obj_property name="ElementShortName">fifo_rderr</obj_property>
+         <obj_property name="ObjectShortName">fifo_rderr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/fifo_clk" type="logic">
+         <obj_property name="ElementShortName">fifo_clk</obj_property>
+         <obj_property name="ObjectShortName">fifo_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/xfifo_axis_rd_tb/fifo_rst" type="logic">
+         <obj_property name="ElementShortName">fifo_rst</obj_property>
+         <obj_property name="ObjectShortName">fifo_rst</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
